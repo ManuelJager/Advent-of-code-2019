@@ -3,9 +3,9 @@ import fileinput
 #init
 lines = [int(line) for line in list(fileinput.input())[0].split(',')]
 
-def part1(t, noun, verb) :
-    t[1] = noun
-    t[2] = verb
+def solve(noun, verb) :
+    t = lines.copy()
+    t[1], t[2] = noun, verb
     for i in range(0, len(t), 4) :
         if t[i] == 1 :
             t[lines[i+3]] = t[t[i+1]] + t[t[i+2]]
@@ -15,11 +15,14 @@ def part1(t, noun, verb) :
             break
     return t[0]
 
+def part1() :
+    return solve(12,2)
+
 def part2() :
     for noun in range(100) :
         for verb in range(100) :
-            if part1(lines.copy(), noun, verb) == 19690720 :
+            if solve(noun, verb) == 19690720 :
                 return f"{noun}{verb}"
 
-print(f"Part 1 result is {part1(lines.copy(), 12, 2)}")
+print(f"Part 1 result is {part1()}")
 print(f"Part 2 result is {part2()}")
