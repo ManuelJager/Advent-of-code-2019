@@ -12,5 +12,11 @@ def validate(num : int, limitGroup : bool) -> bool :
             sizes.append(1)
     return any([size == 2 for size in sizes]) if limitGroup else any([size >= 2 for size in sizes])
 
-print(f"Part 1 result is {len([i for i in range(min, max) if validate(i, False)])}")
-print(f"Part 2 result is {len([i for i in range(min, max) if validate(i, True)])}")
+def part1() -> int :
+    return len([i for i in range(min, max) if validate(i, False)])
+
+def part2() -> int :
+    return len([i for i in range(min, max) if validate(i, True)])
+
+print(f"Part 1 result is {part1()}")
+print(f"Part 2 result is {part2()}")

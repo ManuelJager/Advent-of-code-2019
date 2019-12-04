@@ -1,6 +1,5 @@
 import fileinput
 
-#init
 lines = [int(line) for line in list(fileinput.input())[0].split(',')]
 
 def solve(noun, verb) -> int :
