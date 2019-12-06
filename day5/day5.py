@@ -1,7 +1,7 @@
 import fileinput
 import time
 
-lines = [int(line) for line in list(fileinput.input())[0].split(',')]
+lines = list(map(int, list(fileinput.input())[0].split(',')))
 
 def execute(data, arg) -> int :
     def mread(pointer : int, immediateMode : bool) -> int : #read from memory
@@ -58,5 +58,6 @@ def part1() -> int :
 def part2() -> int : 
     return execute(lines.copy(), 5)
     
-print(f"Part 1 result is {part1()}")
-print(f"Part 2 result is {part2()}")
+#print(f"Part 1 result is {part1()}")
+#print(f"Part 2 result is {part2()}")
+print(executeWithInput())
