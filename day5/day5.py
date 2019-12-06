@@ -58,6 +58,5 @@ def part1() -> int :
 def part2() -> int : 
     return execute(lines.copy(), 5)
     
-#print(f"Part 1 result is {part1()}")
-#print(f"Part 2 result is {part2()}")
-print(executeWithInput())
+print(f"Part 1 result is {part1()}")
+print(f"Part 2 result is {part2()}")
